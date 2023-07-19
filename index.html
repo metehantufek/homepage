@@ -149,6 +149,15 @@
             <div class="icon" id="reddit"></div>
             <div class="icon" id="discord"></div>
             <div class="icon" id="github"></div>
+            <script>
+                function opentab(url, width=800, height=800) {
+                        window.open(url,'_blank').focus();
+                }
+                document.getElementById("youtube").onclick = function() {opentab("https://youtube.com")}
+                document.getElementById("discord").onclick = function() {opentab("https://discord.com")}
+                document.getElementById("github").onclick = function() {opentab("https://github.com")}
+                document.getElementById("reddit").onclick = function() {opentab("https://reddit.com")}
+            </script>
         </div>
     </div>
     <script>
