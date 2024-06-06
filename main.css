@@ -1,0 +1,158 @@
+:root {
+    counter-reset: blockCounter;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(#466086 60%, #1B3E58);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.bgElement {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background: linear-gradient(rgba(31, 31, 31, 0.5),rgba(31, 31, 31, 0.5)), url(background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    transition: filter 0.5s ease;
+    animation: bgload 1s;
+    filter: blur(0px);
+}
+
+.dock {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 50px;
+}
+
+.block {
+    counter-increment: blockCounter;
+    font-family: "Roboto", sans-serif;
+    color: white;
+    border-radius: 30px;
+    padding: 30px;
+    background: linear-gradient(rgba(31, 31, 31, 0.4), rgba(31, 31, 31, 0.8));
+    backdrop-filter: blur(10px);
+    flex: 1;
+    margin: 15px;
+    transition: transform 0.5s ease;
+    transform: translateY(0px);
+    opacity: 1;
+    animation: blockload 1s;
+}
+
+#search {
+    background-color: #313131;
+    outline: 2px solid #555555;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    padding: 5px;
+    display: flex;
+    margin-top: 20px;
+}
+
+#searchlogo {
+    background: url(search.svg);
+    width: 40px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#searchbar {
+    flex: 1;
+    padding: 5px;
+    background: transparent;
+    outline: none;
+    border: none;
+    border-left: 2px solid #555555;
+    color: white;
+    font-family: 'Roboto';
+    font-size: medium;
+}
+
+.short .block {
+    height: 100px;
+}
+
+.medium .block {
+    height: 300px;
+}
+
+.long .block {
+    height: 500px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+}
+
+.glass {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.glasschild {
+    font-family: "Archivo Black";
+    display: block;
+    text-align: center;
+    flex: 1;
+    background-image: url(morning.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 30px;
+    outline: 2px solid white;
+    border: 2px solid white;
+    outline-offset: -8px;
+    transition: backdrop-filter 0.3s ease;
+}
+
+.finalcontainer {
+    padding: 20px;
+    border-radius: 30px;
+}
+.time {
+    font-size: xx-large;
+}
+.time, .date {
+    color: rgba(255, 255, 255, 0.8);
+    transition: color 0.3s ease;
+}
+
+#searchlogo {
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+#searchlogo:hover {
+    opacity: 1;
+}
+
+.glasschild:hover .time, .glasschild:hover .date {
+    color: rgba(255, 255, 255, 1);
+}
+
+@keyframes blockload {
+    0% {
+        transform: translateY(40px);
+        opacity: 0.6;
+    }
+}
+
+@keyframes bgload {
+    0% {
+        filter: blur(40px);
+    }
+}
